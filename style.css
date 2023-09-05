@@ -1,0 +1,52 @@
+h1,
+h2 {
+  font-family: Lato;
+}
+
+.resistor-color-diagram {
+  background-image: url(//www.digikey.be/-/media/Images/Marketing/Resources/Calculator/resistor-color-diagram-bg.png?la=en-BE&amp;ts=bbbc5414-0217-48ff-9486-4ea6092c688c);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 1.5rem;
+  aspect-ratio: 319 / 76;
+  position: relative;
+}
+
+.first-band {
+  position: absolute;
+  top: 0px;
+  left: 0.5rem;
+  width: 0.5rem;
+  height: 100%;
+}
+
+.second-band {
+  position: absolute;
+  top: 0.2rem;
+  left: 1.5rem;
+  width: 0.5rem;
+  height: calc(100% - 0.4em);
+}
+
+.multiplier {
+  position: absolute;
+  top: 0.2rem;
+  left: 2.5rem;
+  width: 0.5rem;
+  height: calc(100% - 0.4em);
+}
+
+.tolerance {
+  position: absolute;
+  left: 5.25rem;
+  width: 0.5rem;
+  height: 100%;
+}
+
+.brown {
+  background-color: #512627;
+}
+
+.gold {
+  background-color: #c08327;
+}
