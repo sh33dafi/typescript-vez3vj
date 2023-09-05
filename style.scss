@@ -3,6 +3,19 @@ h2 {
   font-family: Lato;
 }
 
+#resistors {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  column-gap: 0px;
+  row-gap: 20px;
+}
+
+.resistor-value {
+  display: flex;
+  font-size: 1.25rem;
+}
+
 .resistor-color-diagram {
   background-image: url(//www.digikey.be/-/media/Images/Marketing/Resources/Calculator/resistor-color-diagram-bg.png?la=en-BE&amp;ts=bbbc5414-0217-48ff-9486-4ea6092c688c);
   background-size: cover;
@@ -43,8 +56,44 @@ h2 {
   height: 100%;
 }
 
+.black {
+  background-color: #000000;
+}
+
 .brown {
   background-color: #512627;
+}
+
+.red {
+  background-color: #CC0000;
+}
+
+.orange {
+  background-color: #D87347;
+}
+
+.yellow {
+  background-color: #E6C951;
+}
+
+.green {
+  background-color: #528F65;
+}
+
+.blue {
+  background-color: #0F5190;
+}
+
+.violet {
+  background-color: #6967CE;
+}
+
+.grey {
+  background-color: #7D7D7D;
+}
+
+.white {
+  background-color: #FFFFFF;
 }
 
 .gold {
