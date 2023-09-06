@@ -44,17 +44,15 @@ const resistorValueToColorCodes = (
   if (multiplier === 0.1) {
     multiplierColor = 'gold';
   } else {
-    let multiplierIndex = 0;
-    while (value >= Math.pow(10, multiplier) * 10) {
-      console.log(multiplierIndex);
-      multiplierIndex++;
-    }
-    multiplierColor = colorCodes[multiplier - 1];
+    let multiplierIndex = Math.floor(Math.log10(Math.abs(multiplier)));
+    multiplierColor = colorCodes[multiplierIndex];
   }
 
+  console.log(value, value - (Math.floor(value / 10)*10), colorCodes[value - (Math.floor(value / 10)*10)]);
+
   return {
-    firstBand: '',
-    secondBand: '',
+    firstBand: colorCodes[Math.floor(value / 10)],
+    secondBand: colorCodes[value - (Math.floor(value / 10)*10)],
     multiplier: multiplierColor,
     tolerance: 'gold',
   };
@@ -67,7 +65,7 @@ const colorCodeResistor = (value: number, multiplier: number): string => {
   let secondBandCss = 'brown';
   let multiplierCss = 'brown';
 
-  let resistorValue = convertResistorValue(value);
+  let resistorValue = convertResistorValue(value * multiplier);
 
   return `
   <div class="resistor-color-diagram">      
@@ -80,7 +78,7 @@ const colorCodeResistor = (value: number, multiplier: number): string => {
   `;
 };
 
-const resistorValues = [1, 12, 15, 18, 22, 27, 33, 39, 47, 56, 68, 82];
+const resistorValues = [10, 12, 15, 18, 22, 27, 33, 39, 47, 56, 68, 82];
 const maxFactor = 5;
 
 // Write TypeScript code!
